@@ -10,7 +10,10 @@ const iconSize = 3;
 
 const PostView: FC = () => {
 	const [pageIndex, setPageIndex] = useState(1);
-	const { data } = useSWR<PostType[]>(`https://jsonplaceholder.typicode.com/posts?_page=${pageIndex}`, fetcher);
+	const { data } = useSWR<PostType[]>(
+		`https://jsonplaceholder.typicode.com/posts?_page=${pageIndex}&_limit=4`,
+		fetcher
+	);
 
 	const handlePrevPage = () => {
 		if (pageIndex > 1) {
@@ -25,7 +28,7 @@ const PostView: FC = () => {
 	return (
 		<>
 			<Posts data={data} />
-			<HStack spacing={4} justify="center">
+			<HStack spacing={4} justify="center" mb={16}>
 				<Button leftIcon={<ArrowLeftIcon boxSize={iconSize} />} colorScheme="messenger" onClick={handlePrevPage}>
 					prev
 				</Button>
