@@ -17,7 +17,7 @@ const Post: FC<PostProps> = ({ post, isLastPost }) => {
 			<Divider my={4} />
 			<VStack spacing={2} alignItems="start">
 				<HStack spacing={4} mb={2}>
-					<Avatar name={userInfo?.name} src="https://placehold.jp/150x150.png" size="sm" />
+					<Avatar name={userInfo?.name} src="" size="sm" />
 					<Text fontSize="sm">
 						{userInfo?.name} @{userInfo?.username}
 					</Text>
